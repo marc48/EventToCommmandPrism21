@@ -7,6 +7,6 @@
              Title="{Binding Title}" >
 
   <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
-    <Label Text="Einstweilen nichts vorhanden!" />
+    <Label Text="Still nothing to read here" />
   </StackLayout>
 </ContentPage>

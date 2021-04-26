@@ -7,21 +7,22 @@
              Title="Event Args Parameter Example"
              xmlns:models="clr-namespace:MyEventComPrism21.Models" >
 
-  <ListView ItemsSource="{Binding Developers}">
-    <ListView.ItemTemplate>
-      <DataTemplate x:DataType="models:Developer">
+  <StackLayout Padding="10">
+    <ListView ItemsSource="{Binding Developers}">
+      <ListView.ItemTemplate>
+        <DataTemplate x:DataType="models:Developer">
 
-        <TextCell Text="{Binding FullName}"
+          <TextCell Text="{Binding FullName}"
                     Detail="{Binding Country}" />
 
-      </DataTemplate>
-    </ListView.ItemTemplate>
+        </DataTemplate>
+      </ListView.ItemTemplate>
 
-    <ListView.Behaviors>
-      <prism:EventToCommandBehavior EventName="ItemTapped" 
+      <ListView.Behaviors>
+        <prism:EventToCommandBehavior EventName="ItemTapped" 
                                     Command="{Binding SelectedDeveloperCommand}"
                                     EventArgsParameterPath="Item" />
-    </ListView.Behaviors>
-  </ListView>
-
+      </ListView.Behaviors>
+    </ListView>
+  </StackLayout>
 </ContentPage>

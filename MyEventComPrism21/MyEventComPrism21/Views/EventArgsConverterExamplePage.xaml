@@ -14,22 +14,29 @@
     </ResourceDictionary>
   </ContentPage.Resources>
 
-  <ListView ItemsSource="{Binding Developers}">
-    <ListView.ItemTemplate>
-      <DataTemplate x:DataType="models:Developer">
+  <StackLayout Padding="10">
+    <ListView ItemsSource="{Binding Developers}">
+      <ListView.ItemTemplate>
+        <DataTemplate x:DataType="models:Developer">
 
-        <TextCell Text="{Binding FullName}"
+          <TextCell Text="{Binding FullName}"
                   Detail="{Binding Country}" />
 
-      </DataTemplate>
-    </ListView.ItemTemplate>
+        </DataTemplate>
+      </ListView.ItemTemplate>
 
-    <ListView.Behaviors>
-      <prism:EventToCommandBehavior EventName="ItemTapped" 
+      <ListView.Behaviors>
+        <prism:EventToCommandBehavior EventName="ItemTapped" 
                                     Command="{Binding SelectedDeveloperCommand}"
                                     EventArgsConverter="{StaticResource itemTappedEventArgsConverter}" />
-    </ListView.Behaviors>
-  </ListView>
-
+      </ListView.Behaviors>
+    </ListView>
+    <Label Text="{Binding HeightText}" />
+    <!--<StackLayout.Behaviors>
+      <prism:EventToCommandBehavior EventName="SizeChanged"
+                                    Command="{Binding SizeUpdateCommand}"
+                                    EventArgsParameterPath="newSize" />
+    </StackLayout.Behaviors>-->
+  </StackLayout>
 
 </ContentPage>

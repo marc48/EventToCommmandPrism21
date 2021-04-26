@@ -7,14 +7,23 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using Xamarin.Forms;
 
 namespace MyEventComPrism21.ViewModels
 {
     public class EventArgsConverterExamplePageViewModel : BindableBase
     {
+        private string _heightText;
+        public string HeightText
+        {
+            get { return _heightText; }
+            set { SetProperty(ref _heightText, value); }
+        }
+
         private readonly IPageDialogService _pageDialogService;
         public ObservableCollection<Developer> Developers { get; set; }
         public DelegateCommand<Developer> SelectedDeveloperCommand { get; private set; }
+        public DelegateCommand<Object> SizeUpdateCommand { get; private set; }
 
         public EventArgsConverterExamplePageViewModel(IPageDialogService pageDialogService,
             IDataProvider dataProvider)
@@ -22,6 +31,7 @@ namespace MyEventComPrism21.ViewModels
             _pageDialogService = pageDialogService;
 
             SelectedDeveloperCommand = new DelegateCommand<Developer>(SelectedDeveloper);
+            SizeUpdateCommand = new DelegateCommand<object>(ShowHeight);
 
             // Insert test data into collection of Developers
             Developers = new ObservableCollection<Developer>();
@@ -29,6 +39,14 @@ namespace MyEventComPrism21.ViewModels
             {
                 Developers.Add(developer);
             }
+            
+            _heightText = "StackLayout -1";
+        }
+
+        private void ShowHeight(Object size)
+        {
+            //var newSize = (Size)size;
+            //HeightText = "StackLayout Height: " + newSize.ToString();
         }
 
         private async void SelectedDeveloper(Developer developer)
