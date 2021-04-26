@@ -3,9 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="MyEventComPrism21.Views.SimpleExamplePage"
-             xmlns:models="clr-namespace:MyEventComPrism21.Models"
-             Title="Simple usage" >
+             x:Class="MyEventComPrism21.Views.EventArgsConverterExamplePage"
+             Title="Event Args Converter Example"
+             xmlns:c="clr-namespace:MyEventComPrism21.Converters"
+             xmlns:models="clr-namespace:MyEventComPrism21.Models" >
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <c:ItemTappedEventArgsConverter x:Key="itemTappedEventArgsConverter" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
 
   <ListView ItemsSource="{Binding Developers}">
     <ListView.ItemTemplate>
@@ -19,8 +26,10 @@
 
     <ListView.Behaviors>
       <prism:EventToCommandBehavior EventName="ItemTapped" 
-                                    Command="{Binding SelectedDeveloperCommand}" />
+                                    Command="{Binding SelectedDeveloperCommand}"
+                                    EventArgsConverter="{StaticResource itemTappedEventArgsConverter}" />
     </ListView.Behaviors>
   </ListView>
+
 
 </ContentPage>

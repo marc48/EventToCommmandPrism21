@@ -1,3 +1,4 @@
+using MyEventComPrism21.Services;
 using MyEventComPrism21.ViewModels;
 using MyEventComPrism21.Views;
 using Prism;
@@ -24,12 +25,16 @@ namespace MyEventComPrism21
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
+            //containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<SimpleExamplePage, SimpleExamplePageViewModel>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<EventArgsParameterExamplePage, EventArgsParameterExamplePageViewModel>();
+            containerRegistry.RegisterForNavigation<EventArgsConverterExamplePage, EventArgsConverterExamplePageViewModel>();
+            containerRegistry.RegisterForNavigation<TestPage, TestPageViewModel>();
+
+            containerRegistry.Register<IDataProvider, MockDataProvider>();
         }
     }
 }

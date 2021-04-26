@@ -17,6 +17,10 @@
     <Button Text="Event Args Parameter Path Example" 
             Command="{Binding GoToEventArgsParameterExamplePageCommand}"/>
 
+    <Button Text="Test Page " 
+            Command="{Binding GoToTestPageCommand}"/>
+
+
   </StackLayout>
 
 </ContentPage>
