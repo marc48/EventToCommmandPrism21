@@ -14,7 +14,7 @@
     </ResourceDictionary>
   </ContentPage.Resources>
 
-  <StackLayout Padding="10">
+  <StackLayout Padding="10" >
     <ListView ItemsSource="{Binding Developers}">
       <ListView.ItemTemplate>
         <DataTemplate x:DataType="models:Developer">
@@ -31,12 +31,16 @@
                                     EventArgsConverter="{StaticResource itemTappedEventArgsConverter}" />
       </ListView.Behaviors>
     </ListView>
-    <Label Text="{Binding HeightText}" />
-    <!--<StackLayout.Behaviors>
+    
+    <StackLayout.Behaviors>
       <prism:EventToCommandBehavior EventName="SizeChanged"
-                                    Command="{Binding SizeUpdateCommand}"
-                                    EventArgsParameterPath="newSize" />
-    </StackLayout.Behaviors>-->
+                                    Command="{Binding SizeUpdateCommand}" />
+
+    </StackLayout.Behaviors>
+    <!-- EventArgsParameterPath="newSize" -->
+  </StackLayout>
+  <StackLayout Padding="10" VerticalOptions="End" SizeChanged="StackLayout_SizeChanged" >
+    <Label Text="{Binding HeightText}" />
   </StackLayout>
 
 </ContentPage>
