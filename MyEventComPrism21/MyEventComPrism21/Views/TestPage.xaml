@@ -6,7 +6,23 @@
              x:Class="MyEventComPrism21.Views.TestPage" 
              Title="{Binding Title}" >
 
-  <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
-    <Label Text="Still nothing to read here" />
+  <StackLayout Padding="20" >
+    <StackLayout BackgroundColor="LightSkyBlue" VerticalOptions="StartAndExpand" Margin="10">
+      <Label Text="{Binding Stack1Text}" BackgroundColor="LightSteelBlue" LineBreakMode="WordWrap" Margin="20"/>
+    </StackLayout>
+    <StackLayout BackgroundColor="LightCoral" VerticalOptions="StartAndExpand">
+      <Label Text="{Binding Stack2Text}" BackgroundColor="LightSteelBlue" LineBreakMode="WordWrap" Margin="20" />
+      <StackLayout.Behaviors>
+        <prism:EventToCommandBehavior EventName="SizeChanged"
+                                    Command="{Binding SizeUpdateCommand}" />
+      </StackLayout.Behaviors>
+    </StackLayout>
+    <StackLayout VerticalOptions="End" BackgroundColor="LightGray">
+      <Label Text="{Binding StatusText}" BackgroundColor="LightSteelBlue" LineBreakMode="WordWrap" Margin="20"/>
+      <Button Text="Fill Text Stack1" Command="{Binding FillText1Command}" BackgroundColor="DarkSlateBlue" 
+              TextColor="AntiqueWhite" />
+      <Button Text="Fill Text Stack2" Command="{Binding FillText2Command}" BackgroundColor="DarkSlateBlue" 
+              TextColor="AntiqueWhite" />
+    </StackLayout>
   </StackLayout>
 </ContentPage>

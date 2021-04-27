@@ -8,10 +8,5 @@ namespace MyEventComPrism21.Views
         {
             InitializeComponent();
         }
-
-        private void StackLayout_SizeChanged(object sender, System.EventArgs e)
-        {
-
-        }
     }
 }
