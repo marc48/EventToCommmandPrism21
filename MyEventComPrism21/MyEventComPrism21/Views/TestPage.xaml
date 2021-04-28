@@ -7,22 +7,31 @@
              Title="{Binding Title}" >
 
   <StackLayout Padding="20" >
-    <StackLayout BackgroundColor="LightSkyBlue" VerticalOptions="StartAndExpand" Margin="10">
+    <StackLayout BackgroundColor="LightSkyBlue" VerticalOptions="StartAndExpand" Margin="10" HeightRequest="{Binding Stack1Req}">
       <Label Text="{Binding Stack1Text}" BackgroundColor="LightSteelBlue" LineBreakMode="WordWrap" Margin="20"/>
     </StackLayout>
-    <StackLayout BackgroundColor="LightCoral" VerticalOptions="StartAndExpand">
+    <StackLayout x:Name="stackl2" BackgroundColor="LightCoral" VerticalOptions="StartAndExpand" Margin="10" HeightRequest="{Binding Stack2Req}">
       <Label Text="{Binding Stack2Text}" BackgroundColor="LightSteelBlue" LineBreakMode="WordWrap" Margin="20" />
       <StackLayout.Behaviors>
         <prism:EventToCommandBehavior EventName="SizeChanged"
-                                    Command="{Binding SizeUpdateCommand}" />
+                                    Command="{Binding SizeChangedCommand}" 
+                                    CommandParameter="{Binding Source={x:Reference Name=stackl2}, Path=Height}"/>
       </StackLayout.Behaviors>
     </StackLayout>
-    <StackLayout VerticalOptions="End" BackgroundColor="LightGray">
+    <StackLayout VerticalOptions="End" BackgroundColor="LightGray" Margin="10">
       <Label Text="{Binding StatusText}" BackgroundColor="LightSteelBlue" LineBreakMode="WordWrap" Margin="20"/>
-      <Button Text="Fill Text Stack1" Command="{Binding FillText1Command}" BackgroundColor="DarkSlateBlue" 
+      <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+        <Button Text="Fill Text Stack1" Command="{Binding FillText1Command}" BackgroundColor="DarkSlateBlue" 
               TextColor="AntiqueWhite" />
-      <Button Text="Fill Text Stack2" Command="{Binding FillText2Command}" BackgroundColor="DarkSlateBlue" 
+        <Button Text="Fill Text Stack2" Command="{Binding FillText2Command}" BackgroundColor="DarkSlateBlue" 
               TextColor="AntiqueWhite" />
+      </StackLayout>
+      <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+        <Button Text="HeightRequest++" Command="{Binding AugmentHight1Command}" BackgroundColor="DarkSlateBlue" 
+              TextColor="AntiqueWhite" />
+        <Button Text="Clear HRequests" Command="{Binding HeightReqClearCommand}" BackgroundColor="DarkSlateBlue" 
+              TextColor="AntiqueWhite" />
+      </StackLayout>
     </StackLayout>
   </StackLayout>
 </ContentPage>

@@ -10,9 +10,11 @@ namespace MyEventComPrism21.ViewModels
     public class TestPageViewModel : BindableBase
     {
         private readonly IPageDialogService _pageDialogService;
-        public DelegateCommand SizeUpdateCommand { get; set; }
+        public DelegateCommand<object> SizeChangedCommand { get; set; }
         public DelegateCommand FillText1Command { get; set; }
         public DelegateCommand FillText2Command { get; set; }
+        public DelegateCommand AugmentHight1Command { get; set; }
+        public DelegateCommand HeightReqClearCommand { get; set; }
 
         int anzahl = 0;
 
@@ -36,6 +38,18 @@ namespace MyEventComPrism21.ViewModels
             get { return _stack2Text; }
             set { SetProperty(ref _stack2Text, value); }
         }
+        private double _stack1Req;
+        public double Stack1Req
+        {
+            get { return _stack1Req; }
+            set { SetProperty(ref _stack1Req, value); }
+        }
+        private double _stack2Req;
+        public double Stack2Req
+        {
+            get { return _stack2Req; }
+            set { SetProperty(ref _stack2Req, value); }
+        }
 
         string _title;
         public string Title
@@ -47,14 +61,50 @@ namespace MyEventComPrism21.ViewModels
         {
             _pageDialogService = pageDialogService;
             _title = "Testseite";
-            SizeUpdateCommand = new DelegateCommand(SizeUpdate);
+            SizeChangedCommand = new DelegateCommand<object>(SizeUpdate);
             FillText1Command = new DelegateCommand(FillText1);
             FillText2Command = new DelegateCommand(FillText2);
-
+            AugmentHight1Command = new DelegateCommand(Stack1Heigher);
+            HeightReqClearCommand = new DelegateCommand(ClearRequests);
+            
             _statusText = "Status ...";
-            _stack1Text = "leer...";
-            _stack2Text = "leer...";
+            _stack1Text = "Stack1...";
+            _stack2Text = "Stack2...";
 
+            _stack1Req = -1;
+            _stack2Req = -1;
+
+        }
+
+        private void ClearRequests()
+        {
+            Stack2Text = "geleert...";
+            // -1 fkt. nur, wenn Label geleert!
+            Stack1Req = -1;
+            Stack2Req = -1;
+        }
+
+        private void Stack1Heigher()
+        {
+            // Ausgangshöhe = 59
+            if (Stack1Req > 58)
+            {
+                // um 10 erhöhen
+                Stack1Req += 10;
+            }
+            else
+            {
+                Stack1Req = 59;
+            }
+            
+        }
+
+        private void SizeUpdate(object obj)
+        {
+            anzahl += 1;
+            StatusText = "Stack2 SizeChanged: " + anzahl + " mal, Height Stack2: " + obj.ToString();
+            // Stack 1 an 2 anpassen
+            Stack1Req = (double)obj;
         }
 
         private void FillText2()
@@ -65,12 +115,6 @@ namespace MyEventComPrism21.ViewModels
         private void FillText1()
         {
             Stack1Text += "Neuer Text wird hier geschrieben. ";
-        }
-
-        private void SizeUpdate()
-        {
-            anzahl += 1;
-            StatusText = "Stack2 SizeChanged: " + anzahl + " mal, Height Stack2 = ???";
         }
     }
 }

@@ -21,6 +21,7 @@
       <ListView.Behaviors>
         <prism:EventToCommandBehavior EventName="ItemTapped" 
                                     Command="{Binding SelectedDeveloperCommand}"
+                                    
                                     EventArgsParameterPath="Item" />
       </ListView.Behaviors>
     </ListView>
