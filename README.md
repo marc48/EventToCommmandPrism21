@@ -1,2 +1,2 @@
-# MyEventComPrism21
- Umbau von Prism Samples EventToCommand
+# EventToCommmandPrism21
+ Prism Samples EventToCommand for Xamarin 5.0
