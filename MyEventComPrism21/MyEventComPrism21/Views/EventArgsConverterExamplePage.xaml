@@ -31,12 +31,5 @@
                                     EventArgsConverter="{StaticResource itemTappedEventArgsConverter}" />
       </ListView.Behaviors>
     </ListView>
-    <Label Text="{Binding HeightText}" />
-    <StackLayout.Behaviors>
-      <prism:EventToCommandBehavior EventName="SizeChanged"
-                                    Command="{Binding SizeUpdateCommand}"
-                                    EventArgsConverter="{StaticResource itemTappedEventArgsConverter}" />
-    </StackLayout.Behaviors>
-    <!-- EventArgsParameterPath="newSize" -->
   </StackLayout>
 </ContentPage>

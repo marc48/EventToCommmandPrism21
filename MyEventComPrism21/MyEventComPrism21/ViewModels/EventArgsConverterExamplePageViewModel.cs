@@ -13,17 +13,9 @@ namespace MyEventComPrism21.ViewModels
 {
     public class EventArgsConverterExamplePageViewModel : BindableBase
     {
-        private string _heightText;
-        public string HeightText
-        {
-            get { return _heightText; }
-            set { SetProperty(ref _heightText, value); }
-        }
-
         private readonly IPageDialogService _pageDialogService;
         public ObservableCollection<Developer> Developers { get; set; }
         public DelegateCommand<Developer> SelectedDeveloperCommand { get; private set; }
-        public DelegateCommand<Stackheight> SizeUpdateCommand { get; private set; }
 
         public EventArgsConverterExamplePageViewModel(IPageDialogService pageDialogService,
             IDataProvider dataProvider)
@@ -31,30 +23,12 @@ namespace MyEventComPrism21.ViewModels
             _pageDialogService = pageDialogService;
 
             SelectedDeveloperCommand = new DelegateCommand<Developer>(SelectedDeveloper);
-            SizeUpdateCommand = new DelegateCommand<Stackheight>(SizeUpdate);
 
             // Insert test data into collection of Developers
             Developers = new ObservableCollection<Developer>();
             foreach (var developer in dataProvider.GetAllData())
             {
                 Developers.Add(developer);
-            }
-            
-            _heightText = "Status...";
-        }
-
-        int anzahl = 0;
-        private void SizeUpdate(Stackheight stackheight) 
-        {
-            //var newSize = (Size)size;
-            anzahl += 1;
-            if (stackheight != null)
-            {
-                HeightText = "StackLayout SizeUpdated: " + anzahl + " mal, Height: " + stackheight.Height;
-            }
-            else
-            {
-                HeightText = "StackLayout SizeUpdated: " + anzahl + " mal, Fehler height !!!";
             }
         }
 
