@@ -18,6 +18,13 @@ namespace MyEventComPrism21.ViewModels
 
         int anzahl = 0;
 
+        private string _wlLabelText;
+        public string WlLabelText
+        {
+            get { return _wlLabelText; }
+            set { SetProperty(ref _wlLabelText, value); }
+        }
+
         private string _statusText;
         public string StatusText
         {
@@ -74,6 +81,7 @@ namespace MyEventComPrism21.ViewModels
             _stack1Req = -1;
             _stack2Req = -1;
 
+            _wlLabelText = "wort";
         }
 
         private void ClearRequests()

@@ -3,10 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:w="clr-namespace:AiForms.Layouts;assembly=AiForms.Layouts"
              x:Class="MyEventComPrism21.Views.TestPage" 
              Title="{Binding Title}" >
 
   <StackLayout Padding="20" >
+    <w:RepeatableWrapLayout x:Name="wltarget" BackgroundColor="AntiqueWhite" HeightRequest="{Binding Stack1Req}" >
+      <w:RepeatableWrapLayout.ItemTemplate>
+        <DataTemplate>
+          <Label Text="{Binding WlLabelText}" BackgroundColor="Yellow" />
+        </DataTemplate>
+      </w:RepeatableWrapLayout.ItemTemplate>
+    </w:RepeatableWrapLayout>
     <StackLayout BackgroundColor="LightSkyBlue" VerticalOptions="StartAndExpand" Margin="10" HeightRequest="{Binding Stack1Req}">
       <Label Text="{Binding Stack1Text}" BackgroundColor="LightSteelBlue" LineBreakMode="WordWrap" Margin="20"/>
     </StackLayout>
