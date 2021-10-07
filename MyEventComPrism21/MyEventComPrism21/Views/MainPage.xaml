@@ -8,6 +8,7 @@
 
   <StackLayout Margin="16" VerticalOptions="Center">
 
+    <Label Text="{Binding NetworkAccess}" BackgroundColor="Bisque" />
     <Button Text="Connectivity1" 
             Command="{Binding GoToConn1PageCommand}"/>
     

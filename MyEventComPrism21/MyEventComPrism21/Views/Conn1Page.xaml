@@ -3,6 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="MyEventComPrism21.Views.Conn1Page">
+             x:Class="MyEventComPrism21.Views.Conn1Page"
+             Title="Connectivity Tests 1" >
+
+  <StackLayout Padding="20" VerticalOptions="Center">
+    <Label Text="{Binding NetworkAccess}" BackgroundColor="Bisque" />
+    <Label Text="{Binding Conn2}" BackgroundColor="Bisque" />
+    <Label Text="{Binding Conn2}" BackgroundColor="Bisque" />
+
+  </StackLayout>
   
 </ContentPage>
