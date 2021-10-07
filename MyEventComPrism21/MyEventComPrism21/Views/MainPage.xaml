@@ -9,9 +9,13 @@
   <StackLayout Margin="16" VerticalOptions="Center">
 
     <Label Text="{Binding NetworkAccess}" BackgroundColor="Bisque" />
-    <Button Text="Connectivity1" 
+    
+    <Button Text="Connectivity1 (Versluis)" 
             Command="{Binding GoToConn1PageCommand}"/>
     
+    <Button Text="Connectivity2 (Montemagno)" 
+            Command="{Binding GoToConn2PageCommand}"/>
+
     <Button Text="Simple Example" 
             Command="{Binding GoToSimpleExamplePageCommand}"/>
 

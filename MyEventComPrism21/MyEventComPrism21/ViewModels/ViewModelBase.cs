@@ -38,6 +38,11 @@ namespace MyEventComPrism21.ViewModels
 
         }
 
+        public virtual void OnAppearing(INavigationParameters parameters)
+        {
+
+        }
+
         public virtual void Destroy()
         {
 

@@ -33,7 +33,8 @@ namespace MyEventComPrism21.ViewModels
 
         public Conn1PageViewModel()
         {
-            _networkAccess = "NetworkAccess (Unknown, None, Local, Constrained, Internet): \n" + Connectivity.NetworkAccess.ToString();
+            _networkAccess = Connectivity.NetworkAccess.ToString();
+			// (Unknown, None, Local, Constrained, Internet)
 
             if (Connectivity.NetworkAccess  == Xamarin.Essentials.NetworkAccess.None)
             {
@@ -62,6 +63,20 @@ namespace MyEventComPrism21.ViewModels
             {
                 // TODO Handle Bluetooth oder andere
             }
+			// Bluetooth	1	
+			// The bluetooth data connection.
+
+			// Cellular	2	
+			// The mobile/cellular data connection.
+
+			// Ethernet	3	
+			// The ethernet data connection.
+
+			// Unknown	0	
+			// Other unknown type of connection.
+
+			// WiFi	4	
+			// The WiFi data connection.
 
         }
     }

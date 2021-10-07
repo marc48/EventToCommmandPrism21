@@ -21,6 +21,7 @@ namespace MyEventComPrism21.ViewModels
         }
 
         public DelegateCommand GoToConn1PageCommand { get; private set; }
+        public DelegateCommand GoToConn2PageCommand { get; private set; }
         public DelegateCommand GoToEventArgsConverterExamplePageCommand { get; private set; }
         public DelegateCommand GoToEventArgsParameterExamplePageCommand { get; private set; }
         public DelegateCommand GoToSimpleExamplePageCommand { get; private set; }
@@ -35,6 +36,7 @@ namespace MyEventComPrism21.ViewModels
             GoToSimpleExamplePageCommand = new DelegateCommand(GoToSimpleExamplePage);
             GoToTestPageCommand = new DelegateCommand(GoToTestPage);
             GoToConn1PageCommand = new DelegateCommand(GotoConn1Page);
+            GoToConn2PageCommand = new DelegateCommand(GotoConn2Page);
 
             Connectivity.ConnectivityChanged += ConnectivityChangedHandler;
         }
@@ -47,6 +49,11 @@ namespace MyEventComPrism21.ViewModels
         private async void GotoConn1Page()
         {
             await _navigationService.NavigateAsync("Conn1Page");
+        }
+
+        private async void GotoConn2Page()
+        {
+            await _navigationService.NavigateAsync("Conn2Page");
         }
 
         private async void GoToTestPage()
