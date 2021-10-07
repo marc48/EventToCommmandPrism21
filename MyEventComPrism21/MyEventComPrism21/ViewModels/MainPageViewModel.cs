@@ -11,6 +11,7 @@ namespace MyEventComPrism21.ViewModels
     {
         private readonly INavigationService _navigationService;
 
+        public DelegateCommand GoToConn1PageCommand { get; private set; }
         public DelegateCommand GoToEventArgsConverterExamplePageCommand { get; private set; }
         public DelegateCommand GoToEventArgsParameterExamplePageCommand { get; private set; }
         public DelegateCommand GoToSimpleExamplePageCommand { get; private set; }
@@ -24,6 +25,12 @@ namespace MyEventComPrism21.ViewModels
             GoToEventArgsParameterExamplePageCommand = new DelegateCommand(GoToEventArgsParameterExamplePage);
             GoToSimpleExamplePageCommand = new DelegateCommand(GoToSimpleExamplePage);
             GoToTestPageCommand = new DelegateCommand(GoToTestPage);
+            GoToConn1PageCommand = new DelegateCommand(GotoConn1Page);
+        }
+
+        private async void GotoConn1Page()
+        {
+            await _navigationService.NavigateAsync("Conn1Page");
         }
 
         private async void GoToTestPage()

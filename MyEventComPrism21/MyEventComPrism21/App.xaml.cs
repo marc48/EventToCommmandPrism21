@@ -35,6 +35,7 @@ namespace MyEventComPrism21
             containerRegistry.RegisterForNavigation<TestPage, TestPageViewModel>();
 
             containerRegistry.Register<IDataProvider, MockDataProvider>();
+            containerRegistry.RegisterForNavigation<Conn1Page, Conn1PageViewModel>();
         }
     }
 }

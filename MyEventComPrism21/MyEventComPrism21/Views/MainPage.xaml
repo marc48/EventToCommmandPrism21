@@ -8,6 +8,9 @@
 
   <StackLayout Margin="16" VerticalOptions="Center">
 
+    <Button Text="Connectivity1" 
+            Command="{Binding GoToConn1PageCommand}"/>
+    
     <Button Text="Simple Example" 
             Command="{Binding GoToSimpleExamplePageCommand}"/>
 
