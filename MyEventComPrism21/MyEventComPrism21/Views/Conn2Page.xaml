@@ -6,8 +6,21 @@
              x:Class="MyEventComPrism21.Views.Conn2Page"
              Title="Connectivity Tests 2" >
 
-  <StackLayout Padding="20" VerticalOptions="Center">
-    <Label Text="{Binding ConnStatus}" BackgroundColor="Bisque" />
+  <StackLayout Padding="20" >
+    <StackLayout VerticalOptions="CenterAndExpand">
+      <Label x:Name="LabelStatus" Text="..." BackgroundColor="Bisque" />
+      <Label Text="{Binding ConnStatus}" BackgroundColor="Bisque" />
+    </StackLayout>
+    
+    <StackLayout VerticalOptions="EndAndExpand">
+      <Label Text="Montemagno Login Button" FontSize="Caption" HorizontalOptions="Center" />
+      <Button Text="(Login) - Test Connection" BackgroundColor="Gray" Clicked="Button_Clicked" />
+      <Label Margin="20" HorizontalOptions="Center" Text="(Login) erfolgreich, Connected!" x:Name="LabelTest" 
+             BackgroundColor="Green" TextColor="White" Padding="10" IsVisible="false" />
+      <Label Margin="20" HorizontalOptions="Center" Text="Disconnected!" x:Name="LabelConnection" Opacity="0"
+             BackgroundColor="Red" TextColor="White" Padding="10"/>
+
+    </StackLayout>
     
 
   </StackLayout>
