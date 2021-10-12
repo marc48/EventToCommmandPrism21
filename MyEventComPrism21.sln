@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyEventComPrism21", "MyEventComPrism21\MyEventComPrism21\MyEventComPrism21.csproj", "{0A253EE7-02E0-4464-B711-CC8AB3849F30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyEventComPrism21", "MyEventComPrism21\MyEventComPrism21\MyEventComPrism21.csproj", "{0A253EE7-02E0-4464-B711-CC8AB3849F30}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyEventComPrism21.Android", "MyEventComPrism21\MyEventComPrism21.Android\MyEventComPrism21.Android.csproj", "{7818596D-401B-4B65-9E9C-945BE688178C}"
 EndProject
@@ -236,6 +236,8 @@ Global
 		{20C91B71-C79F-42C9-B75C-00BD72F6F79B}.Debug|ARM.Deploy.0 = Debug|ARM
 		{20C91B71-C79F-42C9-B75C-00BD72F6F79B}.Debug|iPhone.ActiveCfg = Debug|x86
 		{20C91B71-C79F-42C9-B75C-00BD72F6F79B}.Debug|iPhoneSimulator.ActiveCfg = Debug|x86
+		{20C91B71-C79F-42C9-B75C-00BD72F6F79B}.Debug|iPhoneSimulator.Build.0 = Debug|x86
+		{20C91B71-C79F-42C9-B75C-00BD72F6F79B}.Debug|iPhoneSimulator.Deploy.0 = Debug|x86
 		{20C91B71-C79F-42C9-B75C-00BD72F6F79B}.Debug|x64.ActiveCfg = Debug|x64
 		{20C91B71-C79F-42C9-B75C-00BD72F6F79B}.Debug|x64.Build.0 = Debug|x64
 		{20C91B71-C79F-42C9-B75C-00BD72F6F79B}.Debug|x64.Deploy.0 = Debug|x64
