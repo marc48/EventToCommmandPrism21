@@ -8,7 +8,13 @@
 
   <StackLayout Margin="16" VerticalOptions="Center">
 
-    <Label Text="{Binding NetworkAccess}" BackgroundColor="Bisque" />
+    <Label x:Name="Infobox" Text="Code behind..." BackgroundColor="Yellow" Padding="10"/>
+
+    <Label x:Name="LabelConnection"   Margin="20" HorizontalOptions="Center" Text="Disconnected!" x:Name="LabelConnection" Opacity="0"
+             BackgroundColor="Red" TextColor="White" Padding="10"/>
+    <BoxView Color="Silver" HorizontalOptions="Fill" HeightRequest="1" />
+    
+    <Label Text="{Binding NetworkAccess}" BackgroundColor="Bisque" Padding="10" />
     
     <Button Text="Connectivity1 (Versluis)" 
             Command="{Binding GoToConn1PageCommand}"/>

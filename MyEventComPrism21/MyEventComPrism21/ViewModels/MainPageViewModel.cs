@@ -38,8 +38,9 @@ namespace MyEventComPrism21.ViewModels
             GoToConn1PageCommand = new DelegateCommand(GotoConn1Page);
             GoToConn2PageCommand = new DelegateCommand(GotoConn2Page);
 
+            // MVVM
             Connectivity.ConnectivityChanged += ConnectivityChangedHandler;
-        }
+            _networkAccess = "Infobx MWWM Version Connectivity";        }
 
         private void ConnectivityChangedHandler(object sender, ConnectivityChangedEventArgs e)
         {
