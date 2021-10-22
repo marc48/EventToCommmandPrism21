@@ -10,7 +10,7 @@
 
     <Label x:Name="Infobox" Text="Code behind..." BackgroundColor="Yellow" Padding="10"/>
 
-    <Label x:Name="LabelConnection"   Margin="20" HorizontalOptions="Center" Text="Disconnected!" x:Name="LabelConnection" Opacity="0"
+    <Label x:Name="LabelConnection"   Margin="20" HorizontalOptions="Center" Text="Disconnected!" Opacity="0"
              BackgroundColor="Red" TextColor="White" Padding="10"/>
     <BoxView Color="Silver" HorizontalOptions="Fill" HeightRequest="1" />
     
