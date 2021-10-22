@@ -118,7 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyEventComPrism21\MyEventComPrism21.csproj">
-      <Project>{A682884C-CB44-4A89-B752-27BB634E0ABE}</Project>
+      <Project>{0A253EE7-02E0-4464-B711-CC8AB3849F30}</Project>
       <Name>MyEventComPrism21</Name>
     </ProjectReference>
   </ItemGroup>
