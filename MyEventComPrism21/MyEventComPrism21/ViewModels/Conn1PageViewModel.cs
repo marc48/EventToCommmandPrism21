@@ -43,7 +43,6 @@ namespace MyEventComPrism21.ViewModels
 
             Connectivity.ConnectivityChanged += ConnectivityChangedHandler;
 
-
             _conn2 = "Conn2 - leer...";
             _conn3 = "Conn3 - leer...";
 
