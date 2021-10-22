@@ -38,7 +38,7 @@ namespace MyEventComPrism21.Views
         protected override void OnAppearing()
         {
             (BindingContext as IPageNavigationAware)?.OnAppearing();
-            LabelConnection.Text = "OA Behind Net Access: " + Connectivity.NetworkAccess.ToString();
+            Infobox.Text = "OA Behind Net Access: " + Connectivity.NetworkAccess.ToString();
             Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
         }
 

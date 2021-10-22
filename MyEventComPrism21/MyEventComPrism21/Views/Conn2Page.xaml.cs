@@ -34,13 +34,6 @@ namespace MyEventComPrism21.Views
             }
         }
 
-        protected override void OnAppearing()
-        {
-            (BindingContext as IPageNavigationAware)?.OnAppearing();
-            LabelStatus.Text = "OA Behind Net Access: " + Connectivity.NetworkAccess.ToString();
-            Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
-        }
-
         private void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
         {
             if (e.NetworkAccess == NetworkAccess.Internet)
@@ -53,6 +46,13 @@ namespace MyEventComPrism21.Views
                 LabelConnection.FadeTo(1).ContinueWith((result) => { });
                 LabelStatus.Text = "Changed Net Access: " + Connectivity.NetworkAccess.ToString();
             }
+        }
+
+        protected override void OnAppearing()
+        {
+            (BindingContext as IPageNavigationAware)?.OnAppearing();
+            LabelStatus.Text = "OA Behind Net Access: " + Connectivity.NetworkAccess.ToString();
+            Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
         }
 
         protected override void OnDisappearing()
